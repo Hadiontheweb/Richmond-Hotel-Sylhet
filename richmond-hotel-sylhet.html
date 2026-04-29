@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Richmond Hotel Sylhet – Premium Stay, Fine Dining & Elegant Events in Sylhet. Book luxury rooms, banquet halls, and experience world-class hospitality.">
+<title>Richmond Hotel Sylhet | Premium Luxury Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #A07B2A;
+    --black: #0A0A0A;
+    --deep: #111111;
+    --charcoal: #1C1C1C;
+    --warm-dark: #242018;
+    --white: #FAFAF7;
+    --cream: #F5F0E8;
+    --warm-gray: #9A9080;
+    --light-gray: #E8E4DC;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 76px;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.96);
+    box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; line-height: 1;
+    text-decoration: none;
+  }
+  .nav-logo span:first-child {
+    font-family: var(--font-display);
+    font-size: 1.6rem; font-weight: 600; color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .nav-logo span:last-child {
+    font-family: var(--font-body);
+    font-size: 0.6rem; letter-spacing: 0.28em; color: var(--warm-gray);
+    text-transform: uppercase; margin-top: 2px;
+  }
+  .nav-links {
+    display: flex; gap: 2.4rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(250,250,247,0.8); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 500; transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-book {
+    background: var(--gold); color: var(--black);
+    padding: 0.6rem 1.5rem; border: none; cursor: pointer;
+    font-family: var(--font-body); font-size: 0.7rem;
+    letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
+    transition: background 0.25s, transform 0.2s;
+    text-decoration: none;
+  }
+  .nav-book:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--gold); transition: 0.3s; display: block; }
+
+
+  #hero {
+    position: relative; height: 100vh; min-height: 680px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.72) 100%),
+      url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1800&q=85') center/cover no-repeat;
+    transform: scale(1.04);
+    animation: heroZoom 18s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.04); }
+    to   { transform: scale(1.12); }
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+    padding: 0 1.5rem;
+    animation: fadeUp 1.2s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge {
+    font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--gold); font-family: var(--font-body); font-weight: 500;
+    border: 1px solid rgba(201,168,76,0.5); padding: 0.4rem 1.2rem;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 7vw, 5.4rem);
+    font-weight: 300; color: var(--white); line-height: 1.12;
+    letter-spacing: 0.01em;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    color: rgba(250,250,247,0.75); letter-spacing: 0.12em;
+    font-weight: 300; max-width: 520px;
+  }
+  .hero-divider {
+    width: 60px; height: 1px; background: var(--gold);
+    margin: 0.2rem auto;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; margin-top: 0.8rem;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--black);
+    padding: 0.9rem 2.4rem; font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-weight: 600; border: none; cursor: pointer; text-decoration: none;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light); transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+  }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    padding: 0.9rem 2.4rem; font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-weight: 500; border: 1px solid rgba(250,250,247,0.5); cursor: pointer;
+    text-decoration: none; transition: border-color 0.25s, color 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold); color: var(--gold); transform: translateY(-2px);
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(250,250,247,0.5); font-size: 0.6rem; letter-spacing: 0.3em;
+    text-transform: uppercase; animation: bounce 2s infinite;
+  }
+  .hero-scroll::after {
+    content: ''; display: block; width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.7), transparent);
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 100px 5%; }
+  .section-label {
+    font-size: 0.62rem; letter-spacing: 0.45em; text-transform: uppercase;
+    color: var(--gold); font-family: var(--font-body); font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 400; line-height: 1.18; color: var(--deep);
+    margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-dark); }
+  .section-line {
+    width: 48px; height: 1px; background: var(--gold); margin-bottom: 1.4rem;
+  }
+  .section-desc {
+    color: var(--warm-gray); line-height: 1.8; max-width: 560px;
+    font-size: 0.95rem; font-weight: 300;
+  }
+
+
+  #about { background: var(--deep); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .about-img-wrap {
+    position: relative; aspect-ratio: 4/5; overflow: hidden;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 0.7s ease;
+  }
+  .about-img-wrap:hover img { transform: scale(1.04); }
+  .about-img-accent {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 160px; height: 160px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .about-img-badge {
+    position: absolute; top: 24px; 
+    background: var(--gold); color: var(--black);
+    padding: 1.2rem 1.4rem;
+    font-family: var(--font-display);
+    text-align: center; line-height: 1.2;
+  }
+  .about-img-badge strong { display: block; font-size: 2.2rem; font-weight: 600; }
+  .about-img-badge span { font-size: 0.75rem; letter-spacing: 0.15em; }
+  .about-text .section-title { color: var(--white); }
+  .about-text .section-desc { color: rgba(250,250,247,0.55); max-width: 480px; }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(201,168,76,0.15);
+    margin-top: 2.4rem; border: 1px solid rgba(201,168,76,0.15);
+  }
+  .stat-item {
+    background: var(--deep);
+    padding: 1.4rem 1rem; text-align: center;
+  }
+  .stat-item strong {
+    display: block; font-family: var(--font-display);
+    font-size: 2.4rem; font-weight: 400; color: var(--gold); line-height: 1;
+  }
+  .stat-item span {
+    font-size: 0.68rem; letter-spacing: 0.18em; color: var(--warm-gray);
+    text-transform: uppercase; margin-top: 0.3rem; display: block;
+  }
+
+
+  #rooms { background: var(--cream); }
+  .rooms-header { max-width: 1200px; margin: 0 auto 3.5rem; }
+  .rooms-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .room-card {
+    background: var(--white); overflow: hidden;
+    transition: transform 0.35s, box-shadow 0.35s;
+    position: relative;
+  }
+  .room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+  }
+  .room-img {
+    aspect-ratio: 4/3; overflow: hidden; position: relative;
+  }
+  .room-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .room-card:hover .room-img img { transform: scale(1.07); }
+  .room-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--gold); color: var(--black);
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-weight: 600; padding: 0.3rem 0.8rem;
+  }
+  .room-body { padding: 1.8rem; }
+  .room-name {
+    font-family: var(--font-display); font-size: 1.5rem;
+    font-weight: 500; color: var(--deep); margin-bottom: 0.5rem;
+  }
+  .room-desc {
+    font-size: 0.85rem; color: var(--warm-gray); line-height: 1.7;
+    margin-bottom: 1.2rem; font-weight: 300;
+  }
+  .room-features {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.4rem;
+  }
+  .feature-tag {
+    background: var(--cream); color: var(--charcoal);
+    font-size: 0.65rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem;
+    border: 1px solid var(--light-gray); text-transform: uppercase;
+  }
+  .room-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--light-gray); padding-top: 1.2rem;
+  }
+  .room-price { display: flex; flex-direction: column; }
+  .price-from { font-size: 0.6rem; letter-spacing: 0.18em; color: var(--warm-gray); text-transform: uppercase; }
+  .price-val { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold-dark); font-weight: 500; line-height: 1; }
+  .price-val small { font-size: 0.75rem; color: var(--warm-gray); font-family: var(--font-body); }
+  .btn-sm {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600; padding: 0.6rem 1.2rem; background: var(--deep);
+    color: var(--white); border: none; cursor: pointer; text-decoration: none;
+    transition: background 0.25s; display: inline-block;
+  }
+  .btn-sm:hover { background: var(--gold); color: var(--black); }
+
+
+  #dining { background: var(--deep); }
+  .dining-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center;
+  }
+  .dining-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .dining-img {
+    overflow: hidden; position: relative;
+    aspect-ratio: 1; cursor: pointer;
+  }
+  .dining-img:first-child {
+    grid-column: span 2; aspect-ratio: 16/9;
+  }
+  .dining-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.85);
+    transition: transform 0.5s ease, filter 0.4s;
+  }
+  .dining-img:hover img { transform: scale(1.06); filter: brightness(1); }
+  .dining-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+    display: flex; align-items: flex-end; padding: 1rem;
+  }
+  .dining-overlay span {
+    font-family: var(--font-display); font-size: 1rem;
+    color: var(--gold-light); font-style: italic;
+  }
+  .dining-text .section-title { color: var(--white); }
+  .dining-text .section-desc { color: rgba(250,250,247,0.55); }
+  .dining-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .dining-feat {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding-bottom: 1rem; border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .dining-feat:last-child { border-bottom: none; }
+  .dining-feat-icon {
+    width: 36px; height: 36px; background: rgba(201,168,76,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 1rem;
+  }
+  .dining-feat-text strong { display: block; color: var(--white); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .dining-feat-text span { color: rgba(250,250,247,0.45); font-size: 0.8rem; font-weight: 300; }
+
+
+  #banquet { background: var(--cream); }
+  .banquet-inner { max-width: 1200px; margin: 0 auto; }
+  .banquet-hero {
+    position: relative; aspect-ratio: 21/8; overflow: hidden; margin-bottom: 3rem;
+  }
+  .banquet-hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+  .banquet-hero-text {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; gap: 1rem;
+  }
+  .banquet-hero-text .section-label { margin: 0; }
+  .banquet-hero-text h2 {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white); font-weight: 300; font-style: italic;
+  }
+  .banquet-cards {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  }
+  .banquet-card {
+    background: var(--white); padding: 2rem 1.5rem; text-align: center;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .banquet-card:hover {
+    border-color: var(--gold); transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.09);
+  }
+  .banquet-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+  .banquet-card h4 {
+    font-family: var(--font-display); font-size: 1.15rem;
+    color: var(--deep); margin-bottom: 0.5rem; font-weight: 500;
+  }
+  .banquet-card p { font-size: 0.8rem; color: var(--warm-gray); line-height: 1.65; font-weight: 300; }
+
+  #why { background: var(--white); }
+  .why-inner { max-width: 1200px; margin: 0 auto; }
+  .why-header { text-align: center; margin-bottom: 4rem; }
+  .why-header .section-line { margin: 0 auto 1.4rem; }
+  .why-header .section-desc { margin: 0 auto; text-align: center; }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--light-gray); border: 1px solid var(--light-gray);
+  }
+  .why-item {
+    background: var(--white); padding: 2.5rem 2rem;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem;
+    transition: background 0.3s;
+  }
+  .why-item:hover { background: var(--cream); }
+  .why-number {
+    font-family: var(--font-display); font-size: 3rem;
+    color: rgba(201,168,76,0.2); font-weight: 600; line-height: 1;
+  }
+  .why-item h4 {
+    font-family: var(--font-display); font-size: 1.25rem;
+    color: var(--deep); font-weight: 500;
+  }
+  .why-item p { font-size: 0.82rem; color: var(--warm-gray); line-height: 1.7; font-weight: 300; }
+
+  #gallery { background: var(--deep); padding-bottom: 60px; }
+  .gallery-header { max-width: 1200px; margin: 0 auto 3rem; }
+  .gallery-header .section-title { color: var(--white); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 4px; max-width: 1200px; margin: 0 auto;
+  }
+  .gallery-item { overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(3) { grid-column: span 2; }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.82) saturate(0.9);
+    transition: transform 0.55s ease, filter 0.4s;
+  }
+  .gallery-item:hover img { transform: scale(1.08); filter: brightness(1) saturate(1.1); }
+  .gallery-item-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.35s;
+  }
+  .gallery-item:hover .gallery-item-overlay { background: rgba(0,0,0,0.2); }
+  .gallery-item-overlay span {
+    color: var(--gold-light); font-family: var(--font-display);
+    font-size: 1.1rem; font-style: italic; opacity: 0;
+    transform: translateY(10px); transition: opacity 0.3s, transform 0.3s;
+  }
+  .gallery-item:hover .gallery-item-overlay span { opacity: 1; transform: translateY(0); }
+
+ 
+  #testimonials { background: var(--cream); }
+  .test-inner { max-width: 1200px; margin: 0 auto; }
+  .test-header { text-align: center; margin-bottom: 4rem; }
+  .test-header .section-line { margin: 0 auto 1.4rem; }
+  .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .test-card {
+    background: var(--white); padding: 2.2rem;
+    position: relative; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .test-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.09); }
+  .test-quote {
+    font-family: var(--font-display); font-size: 4rem;
+    color: rgba(201,168,76,0.25); line-height: 0.6; margin-bottom: 1rem;
+  }
+  .test-text {
+    font-size: 0.9rem; color: var(--charcoal); line-height: 1.8;
+    font-style: italic; font-family: var(--font-display); font-weight: 400;
+    margin-bottom: 1.5rem; font-size: 1.05rem;
+  }
+  .test-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .test-author { display: flex; align-items: center; gap: 0.8rem; }
+  .test-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--gold); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.1rem; color: var(--black); font-weight: 600;
+    flex-shrink: 0;
+  }
+  .test-author-info strong { display: block; font-size: 0.82rem; color: var(--deep); font-weight: 600; letter-spacing: 0.05em; }
+  .test-author-info span { font-size: 0.72rem; color: var(--warm-gray); }
+
+  
+  #contact { background: var(--deep); }
+  .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .contact-text .section-title { color: var(--white); }
+  .contact-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.4rem; }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .contact-icon {
+    width: 40px; height: 40px; background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0; color: var(--gold);
+  }
+  .contact-item-text strong { display: block; color: var(--white); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .contact-item-text span, .contact-item-text a {
+    color: rgba(250,250,247,0.5); font-size: 0.88rem; font-weight: 300;
+    text-decoration: none; transition: color 0.25s;
+  }
+  .contact-item-text a:hover { color: var(--gold); }
+  .map-placeholder {
+    margin-top: 2rem; aspect-ratio: 16/9;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.8rem;
+    color: var(--warm-gray); font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .map-placeholder span:first-child { font-size: 2rem; color: var(--gold); }
+  .whatsapp-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: #25D366; color: var(--white);
+    padding: 0.7rem 1.5rem; font-size: 0.72rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600; text-decoration: none; margin-top: 1.2rem;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .whatsapp-btn:hover { background: #1db954; transform: translateY(-2px); }
+  .contact-form-wrap {}
+  .contact-form-wrap h3 {
+    font-family: var(--font-display); font-size: 1.8rem;
+    color: var(--white); font-weight: 400; margin-bottom: 0.5rem;
+  }
+  .contact-form-wrap p { color: rgba(250,250,247,0.45); font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,247,0.5); font-weight: 500; }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2);
+    color: var(--white); padding: 0.85rem 1rem;
+    font-family: var(--font-body); font-size: 0.88rem; font-weight: 300;
+    outline: none; transition: border-color 0.25s;
+    width: 100%;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,250,247,0.25); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--deep); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; padding: 1rem; background: var(--gold); color: var(--black);
+    border: none; cursor: pointer; font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    font-weight: 700; transition: background 0.25s, transform 0.2s;
+  }
+  .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+ 
+  footer {
+    background: #060606; padding: 3.5rem 5% 2rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem;
+    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand {}
+  .footer-logo {
+    font-family: var(--font-display); font-size: 1.6rem;
+    color: var(--gold); font-weight: 600; margin-bottom: 0.3rem;
+    display: block;
+  }
+  .footer-logo-sub {
+    font-size: 0.6rem; letter-spacing: 0.35em; color: var(--warm-gray);
+    text-transform: uppercase; display: block; margin-bottom: 1rem;
+  }
+  .footer-brand p {
+    font-size: 0.82rem; color: rgba(250,250,247,0.35);
+    line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem;
+  }
+  .social-links { display: flex; gap: 0.7rem; }
+  .social-link {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--warm-gray); font-size: 0.85rem; text-decoration: none;
+    transition: border-color 0.25s, color 0.25s, background 0.25s;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .footer-col h5 {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul a {
+    color: rgba(250,250,247,0.4); text-decoration: none; font-size: 0.82rem;
+    font-weight: 300; transition: color 0.25s;
+  }
+  .footer-col ul a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { font-size: 0.72rem; color: rgba(250,250,247,0.25); font-weight: 300; }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: rgba(10,10,10,0.98); flex-direction: column;
+    align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--white); text-decoration: none; font-size: 1.8rem;
+    font-family: var(--font-display); font-weight: 300;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close {
+    position: absolute; top: 2rem; right: 5%;
+    background: none; border: none; color: var(--white);
+    font-size: 1.8rem; cursor: pointer;
+  }
+
+
+  @media (max-width: 1024px) {
+    .rooms-grid { grid-template-columns: 1fr 1fr; }
+    .banquet-cards { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-inner { gap: 3.5rem; }
+    .dining-inner { gap: 3rem; }
+    .contact-inner { gap: 3rem; }
+    .gallery-grid { grid-template-rows: 200px 200px; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 70px 5%; }
+    .nav-links, .nav-book { display: none; }
+    .hamburger { display: flex; }
+    .about-inner, .dining-inner, .contact-inner { grid-template-columns: 1fr; }
+    .about-img-accent { display: none; }
+    .about-img-badge { left: 16px; }
+    .rooms-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .test-grid { grid-template-columns: 1fr; }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 160px 160px 160px;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    .gallery-item:nth-child(3) { grid-column: span 1; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .banquet-cards { grid-template-columns: 1fr 1fr; }
+    .dining-grid { grid-template-columns: 1fr; }
+    .dining-img:first-child { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .banquet-hero { aspect-ratio: 16/9; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .banquet-cards { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <span>Richmond Hotel</span>
+    <span>Sylhet · Bangladesh</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#dining">Dining</a></li>
+    <li><a href="#banquet">Events</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-book">Book Now</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#rooms" onclick="toggleMenu()">Rooms</a>
+  <a href="#dining" onclick="toggleMenu()">Dining</a>
+  <a href="#banquet" onclick="toggleMenu()">Events</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#contact" class="btn-primary" onclick="toggleMenu()">Book Now</a>
+</div>
+
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">★ Sylhet's Premier Hotel ★</div>
+    <h1 class="hero-title">Welcome to<br><em>Richmond Hotel</em><br>Sylhet</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Premium Stay, Fine Dining & Elegant Events in the Heart of Sylhet</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Your Stay</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt="Richmond Hotel Sylhet lobby" loading="lazy">
+      <div class="about-img-accent"></div>
+      <div class="about-img-badge">
+        <strong>5★</strong>
+        <span>Luxury</span>
+      </div>
+    </div>
+    <div class="about-text reveal reveal-delay-2">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Where <em>Elegance</em><br>Meets Comfort</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">
+        Richmond Hotel Sylhet is more than a place to stay — it is an experience crafted for those who appreciate the finer things in life. Nestled in the heart of Sylhet, our hotel offers an unrivalled combination of luxurious accommodation, exquisite dining, and world-class event facilities.
+      </p>
+      <p class="section-desc" style="margin-top:1rem;">
+        From the moment you arrive, our dedicated team ensures every detail is perfect. Whether you are a leisure traveller, a business guest, or planning a grand event, Richmond Hotel Sylhet is your home of distinction.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item"><strong>50+</strong><span>Luxury Rooms</span></div>
+        <div class="stat-item"><strong>8+</strong><span>Years of Service</span></div>
+        <div class="stat-item"><strong>5K+</strong><span>Happy Guests</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="rooms">
+  <div class="rooms-header reveal">
+    <p class="section-label">Accommodations</p>
+    <h2 class="section-title">Thoughtfully Designed <em>Rooms & Suites</em></h2>
+    <div class="section-line"></div>
+    <p class="section-desc">Each room is a sanctuary of comfort, blending contemporary design with warm Sylheti hospitality.</p>
+  </div>
+  <div class="rooms-grid">
+    <div class="room-card reveal reveal-delay-1">
+      <div class="room-img">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80" alt="Deluxe Room" loading="lazy">
+        <div class="room-badge">Popular</div>
+      </div>
+      <div class="room-body">
+        <h3 class="room-name">Deluxe Room</h3>
+        <p class="room-desc">A beautifully appointed room offering premium comfort with elegant décor and city views — perfect for solo or couple stays.</p>
+        <div class="room-features">
+          <span class="feature-tag">King Bed</span>
+          <span class="feature-tag">Free Wi-Fi</span>
+          <span class="feature-tag">AC</span>
+          <span class="feature-tag">Smart TV</span>
+          <span class="feature-tag">Mini Bar</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <span class="price-from">Starting from</span>
+            <span class="price-val">৳3,500 <small>/ night</small></span>
+          </div>
+          <a href="#contact" class="btn-sm">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="room-card reveal reveal-delay-2">
+      <div class="room-img">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=80" alt="Family Suite" loading="lazy">
+        <div class="room-badge">Best Value</div>
+      </div>
+      <div class="room-body">
+        <h3 class="room-name">Family Suite</h3>
+        <p class="room-desc">Spacious and thoughtfully arranged, our Family Suite provides ample room for families to relax and create lasting memories together.</p>
+        <div class="room-features">
+          <span class="feature-tag">2 Bedrooms</span>
+          <span class="feature-tag">Living Area</span>
+          <span class="feature-tag">Kitchenette</span>
+          <span class="feature-tag">Kids Amenities</span>
+          <span class="feature-tag">Bathtub</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <span class="price-from">Starting from</span>
+            <span class="price-val">৳6,500 <small>/ night</small></span>
+          </div>
+          <a href="#contact" class="btn-sm">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="room-card reveal reveal-delay-3">
+      <div class="room-img">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=700&q=80" alt="Executive Room" loading="lazy">
+        <div class="room-badge">Business</div>
+      </div>
+      <div class="room-body">
+        <h3 class="room-name">Executive Room</h3>
+        <p class="room-desc">Tailored for the discerning business traveller, with a dedicated work zone, premium amenities, and access to our executive lounge.</p>
+        <div class="room-features">
+          <span class="feature-tag">Work Desk</span>
+          <span class="feature-tag">Exec Lounge</span>
+          <span class="feature-tag">Fast Wi-Fi</span>
+          <span class="feature-tag">Safe</span>
+          <span class="feature-tag">Premium Toiletries</span>
+        </div>
+        <div class="room-footer">
+          <div class="room-price">
+            <span class="price-from">Starting from</span>
+            <span class="price-val">৳5,200 <small>/ night</small></span>
+          </div>
+          <a href="#contact" class="btn-sm">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="dining">
+  <div class="dining-inner">
+    <div class="dining-grid reveal">
+      <div class="dining-img">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Restaurant" loading="lazy">
+        <div class="dining-overlay"><span>The Grand Restaurant</span></div>
+      </div>
+      <div class="dining-img">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Coffee Lounge" loading="lazy">
+        <div class="dining-overlay"><span>Coffee Lounge</span></div>
+      </div>
+      <div class="dining-img">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Fine Dining" loading="lazy">
+        <div class="dining-overlay"><span>Fine Cuisine</span></div>
+      </div>
+    </div>
+    <div class="dining-text reveal reveal-delay-2">
+      <p class="section-label">Culinary Experience</p>
+      <h2 class="section-title">Restaurant &<br><em>Coffee Lounge</em></h2>
+      <div class="section-line"></div>
+      <p class="section-desc" style="color:rgba(250,250,247,0.55)">Savour the finest local and international cuisine crafted by our expert chefs. From a hearty breakfast to an intimate dinner, every meal is an occasion.</p>
+      <div class="dining-features">
+        <div class="dining-feat">
+          <div class="dining-feat-icon">🍽️</div>
+          <div class="dining-feat-text">
+            <strong>The Grand Restaurant</strong>
+            <span>Multi-cuisine menu with Bangladeshi specialties, continental classics & seasonal dishes.</span>
+          </div>
+        </div>
+        <div class="dining-feat">
+          <div class="dining-feat-icon">☕</div>
+          <div class="dining-feat-text">
+            <strong>Artisan Coffee Lounge</strong>
+            <span>Freshly brewed specialty coffee, light bites & a tranquil atmosphere for meetings or relaxation.</span>
+          </div>
+        </div>
+        <div class="dining-feat">
+          <div class="dining-feat-icon">🌿</div>
+          <div class="dining-feat-text">
+            <strong>Private Dining Available</strong>
+            <span>Reserve an intimate table for two or a private dining room for special celebrations.</span>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary" style="margin-top:1.5rem;">Reserve a Table</a>
+    </div>
+  </div>
+</section>
+
+<section id="banquet">
+  <div class="banquet-inner">
+    <div class="banquet-hero reveal">
+      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80" alt="Banquet Hall Richmond Hotel Sylhet" loading="lazy">
+      <div class="banquet-hero-text">
+        <p class="section-label">Event Spaces</p>
+        <h2>Your Perfect <em>Event Venue</em></h2>
+      </div>
+    </div>
+    <div class="banquet-cards">
+      <div class="banquet-card reveal reveal-delay-1">
+        <div class="banquet-icon">💍</div>
+        <h4>Wedding Events</h4>
+        <p>Celebrate your special day with bespoke décor, floral arrangements, and a dedicated wedding coordination team.</p>
+      </div>
+      <div class="banquet-card reveal reveal-delay-2">
+        <div class="banquet-icon">💼</div>
+        <h4>Corporate Meetings</h4>
+        <p>Fully equipped conference rooms with AV technology, high-speed internet and professional catering services.</p>
+      </div>
+      <div class="banquet-card reveal reveal-delay-3">
+        <div class="banquet-icon">🎉</div>
+        <h4>Parties & Celebrations</h4>
+        <p>From birthday galas to anniversary dinners, our team crafts unforgettable moments for every occasion.</p>
+      </div>
+      <div class="banquet-card reveal reveal-delay-4">
+        <div class="banquet-icon">🏆</div>
+        <h4>Award Ceremonies</h4>
+        <p>Impress your guests with a grand venue, stage setup, lighting design and impeccable service from our events team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <p class="section-label">Why Richmond</p>
+      <h2 class="section-title">More Than a Hotel,<br>A <em>Complete Experience</em></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Every detail is curated so your stay is seamless, memorable, and truly exceptional.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-number">01</div>
+        <h4>Prime Location</h4>
+        <p>Situated at the heart of Sylhet — close to Hazrat Shah Jalal International Airport, major business hubs, and the city's top attractions.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-number">02</div>
+        <h4>Luxury Rooms</h4>
+        <p>Thoughtfully designed rooms and suites with premium furnishings, modern amenities, and a warm, welcoming ambiance.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-number">03</div>
+        <h4>Fine Dining</h4>
+        <p>Award-winning restaurant serving authentic Bangladeshi cuisine alongside international favourites, with a relaxing coffee lounge.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-number">04</div>
+        <h4>Grand Event Hall</h4>
+        <p>Versatile banquet spaces for weddings, conferences, and celebrations — with full event planning and décor services.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-number">05</div>
+        <h4>Warm Hospitality</h4>
+        <p>Our multilingual staff is available 24/7, dedicated to making every guest feel valued, comfortable, and at home.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-number">06</div>
+        <h4>Easy Booking</h4>
+        <p>Book directly via our website, WhatsApp, or phone for the best available rates and exclusive packages — no hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <p class="section-label">Visual Tour</p>
+    <h2 class="section-title" style="color:var(--white)">A Glimpse of <em>Richmond</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=80" alt="Hotel lobby" loading="lazy">
+      <div class="gallery-item-overlay"><span>Grand Lobby</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80" alt="Hotel pool" loading="lazy">
+      <div class="gallery-item-overlay"><span>Rooftop View</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80" alt="Luxury bedroom" loading="lazy">
+      <div class="gallery-item-overlay"><span>Deluxe Room</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=600&q=80" alt="Restaurant" loading="lazy">
+      <div class="gallery-item-overlay"><span>Restaurant</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1504279807002-09854ccc9b6c?w=600&q=80" alt="Banquet hall" loading="lazy">
+      <div class="gallery-item-overlay"><span>Banquet Hall</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="testimonials">
+  <div class="test-inner">
+    <div class="test-header reveal">
+      <p class="section-label">Guest Reviews</p>
+      <h2 class="section-title">Words from Our <em>Guests</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal reveal-delay-1">
+        <div class="test-quote">"</div>
+        <p class="test-text">An absolutely magnificent stay. The rooms were immaculate, the staff warm beyond measure, and the restaurant food was simply outstanding. Richmond Hotel Sylhet exceeded every expectation.</p>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">
+          <div class="test-avatar">R</div>
+          <div class="test-author-info">
+            <strong>Rafiq Ahmed</strong>
+            <span>Dhaka · Business Traveller</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-delay-2">
+        <div class="test-quote">"</div>
+        <p class="test-text">We held our wedding reception at the banquet hall and it was breathtaking. The event team handled every detail with such professionalism. Our guests are still talking about it!</p>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">
+          <div class="test-avatar">N</div>
+          <div class="test-author-info">
+            <strong>Nadia & Farhan</strong>
+            <span>Sylhet · Wedding Guests</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal reveal-delay-3">
+        <div class="test-quote">"</div>
+        <p class="test-text">Perfect location, luxurious rooms and the best coffee lounge in Sylhet. Stayed here during a family trip and every single member of our family was thoroughly impressed. Highly recommend!</p>
+        <div class="test-stars">★★★★★</div>
+        <div class="test-author">
+          <div class="test-avatar">S</div>
+          <div class="test-author-info">
+            <strong>Shahana Begum</strong>
+            <span>Chittagong · Family Stay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-text reveal">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title" style="color:var(--white)">Get in <em>Touch</em></h2>
+      <div class="section-line"></div>
+      <p class="section-desc" style="color:rgba(250,250,247,0.5)">We would love to hear from you. Reach out to make a reservation, enquire about events, or simply say hello.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Address</strong>
+            <span>Richmond Hotel, Zindabazar Road, Sylhet 3100, Bangladesh</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <a href="tel:+8801700000000">+880 1700-000000</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:info@richmondhotelsylhet.com">info@richmondhotelsylhet.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Check-in / Check-out</strong>
+            <span>Check-in: 2:00 PM · Check-out: 12:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/8801700000000" class="whatsapp-btn" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <div class="map-placeholder">
+        <span>📍</span>
+        <span>Zindabazar, Sylhet, Bangladesh</span>
+        <small style="color:rgba(250,250,247,0.25);font-size:0.7rem;letter-spacing:0.15em;">Interactive map — Embed Google Maps here</small>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal reveal-delay-2">
+      <h3>Booking Enquiry</h3>
+      <p>Fill in the form and our team will respond within 24 hours.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+880 17XX-XXXXXX">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-in Date</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Check-out Date</label>
+          <input type="date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Room Type</label>
+        <select>
+          <option value="">Select a room type</option>
+          <option>Deluxe Room</option>
+          <option>Family Suite</option>
+          <option>Executive Room</option>
+          <option>Banquet / Event Inquiry</option>
+          <option>Restaurant Reservation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Any special requests, requirements or questions..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">Richmond Hotel</span>
+      <span class="footer-logo-sub">Sylhet · Bangladesh</span>
+      <p>Where every stay becomes a treasured memory. Experience premium hospitality, fine dining, and elegant events in the heart of Sylhet.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#000"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="WhatsApp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#rooms">Rooms & Suites</a></li>
+        <li><a href="#dining">Restaurant</a></li>
+        <li><a href="#banquet">Banquet Hall</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#rooms">Room Booking</a></li>
+        <li><a href="#dining">Table Reservation</a></li>
+        <li><a href="#banquet">Wedding Events</a></li>
+        <li><a href="#banquet">Corporate Events</a></li>
+        <li><a href="#contact">Airport Transfer</a></li>
+        <li><a href="#contact">Concierge</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Zindabazar, Sylhet 3100</a></li>
+        <li><a href="tel:+8801700000000">+880 1700-000000</a></li>
+        <li><a href="mailto:info@richmondhotelsylhet.com">info@richmondhotelsylhet.com</a></li>
+        <li><a href="#">Check-in: 2:00 PM</a></li>
+        <li><a href="#">Check-out: 12:00 PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Richmond Hotel Sylhet. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+  
+  
+  
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function handleSubmit(btn) {
+    btn.textContent = '✓ Enquiry Sent! We\'ll be in touch soon.';
+    btn.style.background = '#2d7a4f';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+  
+</script>
+
+</body>
+</html>
